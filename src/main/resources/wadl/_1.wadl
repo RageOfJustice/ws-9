@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="http://www.justice.no"/>
+  <resources base="http://www.justice.no">
+    <resource path="login" >
+      <doc xml:lang="en" title="login"/>
+      <method name="POST" >
+        <doc xml:lang="en" title="auth"/>
+        <request>
+          <representation mediaType="application/xml"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/xml"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="logout">
+      <doc xml:lang="en" title="logout"/>
+      <method name="GET">
+        <doc xml:lang="en" title="logout"/>
+        <request/>
+      </method>
+    </resource>
+    <resource path="categories" >
+      <doc xml:lang="en" title="categories"/>
+      <resource path="" >
+        <doc xml:lang="en" title="{id}"/>
+        <method name="GET">
+          <doc xml:lang="en" title="Method 1"/>
+          <request>
+            <param name="id" type="xs:string" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          </request>
+          <response status="200">
+            <representation mediaType="apllication/xml"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" >
+        <doc xml:lang="en" title="List"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/xml"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="products/" >
+      <doc xml:lang="en" title="{category_id}"/>
+      <method name="GET" >
+        <doc xml:lang="en" title="Method 1"/>
+        <request>
+          <param name="category_id" type="xs:string" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/xml"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="product/">
+      <doc xml:lang="en" title="{product_id}"/>
+      <method name="GET" >
+        <doc xml:lang="en" title="getP"/>
+        <request>
+          <param name="product_id" type="xs:string" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/xml"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="orders">
+      <doc xml:lang="en" title="orders"/>
+      <resource path="" >
+        <doc xml:lang="en" title="{order_id}"/>
+        <method name="GET" >
+          <doc xml:lang="en" title="getOrderById"/>
+          <request>
+            <param name="order_id" type="xs:string" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          </request>
+          <response status="200">
+            <representation mediaType="application/xml"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" >
+        <doc xml:lang="en" title="getOrders"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/xml"/>
+        </response>
+      </method>
+      <method name="POST">
+        <doc xml:lang="en" title="postOrder"/>
+        <request>
+          <representation mediaType="application/xml"/>
+        </request>
+   
+        <response status="200">
+          <representation mediaType="application/xml"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>
